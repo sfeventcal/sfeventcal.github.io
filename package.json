@@ -1,0 +1,22 @@
+{
+  "name": "sfeventcal",
+  "version": "1.0.0",
+  "description": "Event Calendar for Shakes and Fidget",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfeventcal/sfeventcal.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sfeventcal/sfeventcal/issues"
+  },
+  "homepage": "https://github.com/sfeventcal/sfeventcal#readme",
+  "dependencies": {
+    "js-year-calendar": "git+https://github.com/sfeventcal/js-year-calendar.git"
+  }
+}
