@@ -48,6 +48,13 @@ function createCalendar(options, data) {
                     return [];
                 });
         },
+        customMonthTitleRenderer: function (titleCell, year, month) {
+            var titleLink = document.createElement('a');
+			titleLink.textContent = Calendar.locales[this.options.language].months[month];
+            titleLink.href = "month.html?m=" + month + "&y=" + year;
+            titleCell.textContent = "";
+			titleCell.appendChild(titleLink);
+        },
         customDataSourceRenderer: function (elt, currentDate, events) {
             var parent = elt.parentElement;
             events.forEach(ev => {
@@ -64,7 +71,7 @@ function createCalendar(options, data) {
         },
         clickDay: function(e) {
             if (e.events.length > 0) {
-                window.open(`month.html?m=${e.date.getMonth()}&y=${e.date.getYear()}`, "_self");
+                window.open(`month.html?m=${e.date.getMonth()}&y=${e.date.getFullYear()}`, "_self");
             }
         },
         mouseOnDay: function(e) {

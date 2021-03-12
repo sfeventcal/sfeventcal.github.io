@@ -1,8 +1,15 @@
 function initMonthCalendar() {
     var calendarEl = document.getElementById('calendar');
 
+    var urlParams = new URLSearchParams(window.location.search);
+    var defMonth = urlParams.get('m');
+    var defYear = urlParams.get('y');
+    var defDate = new Date(defYear, defMonth, 1);
+    defDate = (defDate instanceof Date && !isNaN(defDate)) ? defDate : null;
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
+      initialDate: defDate,
       showNonCurrentDates: true,
       fixedWeekCount: true,
       firstDay: 1,
