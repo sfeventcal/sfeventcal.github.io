@@ -33,6 +33,7 @@ function createCalendar(options, data) {
         enableContextMenu: true,
         enableRangeSelection: false,
         minDate: minDate,
+        hideOtherMonths: true,
         //style: 'background',
         style: 'custom',
         dataSource: function (year) {

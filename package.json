@@ -4,7 +4,7 @@
   "description": "Event Calendar for Shakes and Fidget",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "cp node_modules/js-year-calendar/dist/js-year-calendar.min.js js/ && cp node_modules/js-year-calendar/dist/js-year-calendar.min.css style/"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,7 @@
     "url": "https://github.com/sfeventcal/sfeventcal/issues"
   },
   "homepage": "https://github.com/sfeventcal/sfeventcal#readme",
-  "dependencies": {}
+  "dependencies": {
+    "js-year-calendar": "git+https://github.com/sfeventcal/js-year-calendar.git"
+  }
 }
