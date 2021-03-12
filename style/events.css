@@ -215,3 +215,8 @@
 .fc-day-fri, .fc-day-sat, .fc-day-sun {
     background-color: #f9f9f9;
 }
+
+td.day.today {
+    border: 1px dotted;
+    border-radius: 0;
+}

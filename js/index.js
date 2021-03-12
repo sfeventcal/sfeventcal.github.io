@@ -58,6 +58,9 @@ function createCalendar(options, data) {
                     }
                 }
             });
+            if (DateTime.fromJSDate(currentDate).hasSame(DateTime.local(), "day")) {
+                $(parent).addClass("today");
+            }
         },
         clickDay: function(e) {
             if (e.events.length > 0) {
