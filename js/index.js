@@ -1,5 +1,8 @@
 let calendar = null;
 
+var DateTime = luxon.DateTime;
+luxon.Settings.defaultZoneName = 'Europe/Berlin';
+
 // parseDateStr expects a date in format "yyyy-mm-dd", in Europe/Berlin timezone (+01:00)
 function parseDateStr(dateStr) {
     if (dateStr) {
@@ -34,10 +37,13 @@ function dataToEvents(data) {
 }
 
 function createCalendar(options, data) {
+    var minDate = DateTime.now().startOf('month').toJSDate();
+
     calendar = new Calendar('#calendar', {
         weekStart: 1,
         enableContextMenu: true,
         enableRangeSelection: false,
+        minDate: minDate,
         //style: 'background',
         style: 'custom',
         dataSource: function (year) {
