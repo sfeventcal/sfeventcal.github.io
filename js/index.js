@@ -71,7 +71,7 @@ function createCalendar(options, data) {
         },
         clickDay: function(e) {
             if (e.events.length > 0) {
-                window.open(`month.html?m=${e.date.getMonth()}&y=${e.date.getFullYear()}`, "_self");
+                window.location = `month.html?m=${e.date.getMonth()}&y=${e.date.getFullYear()}`;
             }
         },
         mouseOnDay: function(e) {

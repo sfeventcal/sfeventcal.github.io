@@ -32,9 +32,8 @@ function initMonthCalendar() {
       },
 
       headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'yearViewButton,dayGridMonth,listYear'
+        left: 'prev,title,next',
+        right: ''
       },
 
       displayEventTime: false,
