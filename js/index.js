@@ -1,32 +1,21 @@
 let calendar = null;
 
 var DateTime = luxon.DateTime;
-luxon.Settings.defaultZoneName = 'Europe/Berlin';
-
-// parseDateStr expects a date in format "yyyy-mm-dd", in Europe/Berlin timezone (+01:00)
-function parseDateStr(dateStr) {
-    if (dateStr) {
-        dateStr += 'T00:00:00.000';
-    }
-    if (dateStr) {
-        dateStr += '+01:00';
-    }
-    return new Date(dateStr);
-}
+var serverZone = 'Europe/Berlin';
 
 function dataToEvents(data) {
     var events = data.items.map(function(item){
-        var start = parseDateStr(item.start.date);
-        var end = parseDateStr(item.end.date);
+        var start = DateTime.fromISO(item.start.date);
+        var end = DateTime.fromISO(item.end.date);
         // End date of all-day events is exclusive, so we need to substract 1 day
-        end.setDate(end.getDate() - 1);
+        end = end.plus({ days: -1 }).startOf('day');
 
         var event = {
             id: item.id,
             name: item.summary,
             description: item.description || "",
-            startDate: start,
-            endDate: end,
+            startDate: start.toJSDate(),
+            endDate: end.toJSDate(),
             link: item.htmlLink,
             background: mainEventBgColor(item.summary),
             textColor: mainEventTextColor(item.summary),
