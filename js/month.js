@@ -6,6 +6,8 @@ function initMonthCalendar() {
       showNonCurrentDates: true,
       fixedWeekCount: true,
       firstDay: 1,
+      contentHeight:"auto",
+      handleWindowResize:true,
       eventOrder: (e1, e2) => {
           var a = eventOrder(e1.title);
           var b = eventOrder(e2.title);
