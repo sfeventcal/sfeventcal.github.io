@@ -117,9 +117,14 @@
     display: none;
   }
 
+  .st-actionContainer {
+    width: 310px;
+  }
+
   .st-panel-contents{
     padding: 5%;
     width: 280px;
+    user-select: none;
   }
 
   .checkbox {
@@ -171,8 +176,9 @@
         <div class="checkbox">
           <label><input type="checkbox" value="normal" checked class="other">Other</label>
         </div>
-        <div class="checkbox">
-          <label><input type="checkbox" value="normal" checked class="speculated">Speculated</label>
+        <hr />
+        <div class="checkbox" style="width: 100%">
+          <label><input type="checkbox" value="normal" checked class="speculated">Including speculated events</label>
         </div>
       </div>
     </div>
