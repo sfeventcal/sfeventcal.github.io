@@ -7,9 +7,12 @@
 <meta name="HandheldFriendly" content="true">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5/main.min.css">
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/sfeventcal/st-action-panel-git@1.0.6/css/st.action-panel.css" />
 <link rel="stylesheet" href="style/events.css" />
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/sfeventcal/st-action-panel-git@1.0.6/js/st.action-panel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5/locales-all.min.js"></script>
 <script src="js/events.js"></script>
@@ -17,6 +20,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     initMonthCalendar();
+    initFilter();
 
     document.querySelector('.fc-toolbar-title').addEventListener('click', event => {
       window.location = "index.html";
@@ -35,8 +39,9 @@
   #loading {
     display: none;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 32px;
+    font-size: 10px;
   }
 
   #calendar {
@@ -111,11 +116,69 @@
   .fc-header-toolbar .fc-button-active {
     display: none;
   }
+
+  .st-panel-contents{
+    padding: 5%;
+    width: 280px;
+  }
+
+  .checkbox {
+    display: inline-block;
+    width: 130px;
+  }
 </style>
 </head>
 <body>
   <div id='loading'>loading...</div>
 
   <div id='calendar'></div>
+
+  <div class="st-actionContainer left-bottom">
+    <div class="st-panel">
+      <div class="st-panel-header"><i class="fa fa-filter" aria-hidden="true"></i> What events to show:</div>
+      <div class="st-panel-contents">
+        <button id="flt-all">Check all</button><br />
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="gold">Gold</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="xp">XP</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="epic">Epic</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="mushrooms">Mushroom</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="fortress">Fortress</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="blacksmith">Blacksmith</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="aura">Toilet</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="souls">Souls</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="hourglasses">Hourglasses</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="animals">Fruits</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="other">Other</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="normal" checked class="speculated">Speculated</label>
+        </div>
+      </div>
+    </div>
+    <div class="st-btn-container left-bottom">
+      <div class="st-button-main"><i class="fa fa-filter" aria-hidden="true"></i></div>
+    </div>
+  </div>
 </body>
 </html>

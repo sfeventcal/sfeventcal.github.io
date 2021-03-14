@@ -44,9 +44,26 @@ function initMonthCalendar() {
       },
 
       eventDidMount: function(info) {
+        var shouldShow = true;
+        var classNames = eventClass(info.event.title);
+        var cls = classNames.split(" ");
+        for (var i = 0; i < cls.length; i++) {
+          var filter = $(".st-panel-contents ." + cls[i]);
+          if (filter) {
+            if (filter.prop("checked"))
+            {
+              shouldShow = true;
+              break;
+            } else {
+              shouldShow = false;
+            }
+          }
+        }
+        $(info.el).parent().css('opacity', (shouldShow) ? '1' : '0');
+
         tippy(info.el, {
           content:
-            `<div class="event-tooltip ${eventClass(info.event.title)}">` +
+            `<div class="event-tooltip ${classNames}">` +
               `<div class="event-name">${info.event.title}</div>` +
               `<div class="event-description">${info.event.extendedProps.description || ""}</div>` +
             `</div>`,
@@ -73,4 +90,23 @@ function initMonthCalendar() {
     });
 
     calendar.render();
+}
+
+function initFilter() {
+  $('st-actionContainer').launchBtn( { openDuration: 500, closeDuration: 300 } );
+
+  $(".st-panel-contents").on("click", "input[type='checkbox']", function(){
+    if($(this).is(":checked")){
+      $("a." + $(this).attr("class")).parent().css('opacity', '1');
+    }else{
+      $("a." + $(this).attr("class")).parent().css('opacity', '0');
+    }
+  });
+
+  $("#flt-all").click(function() {
+    $(".st-panel-contents input[type='checkbox']").each(function(){
+      $(this).prop('checked', true);
+      $("a." + $(this).attr("class")).parent().css('opacity', '1');
+    });
+  });
 }

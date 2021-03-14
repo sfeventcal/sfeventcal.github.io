@@ -110,47 +110,82 @@ function isMultiEvent(summary) {
     return false;
 }
 
+function isSpeculated(summary) {
+    lowerText = summary.toLowerCase();
+    if (lowerText.includes("speculate")) {
+        return true;
+    }
+    return false;
+}
+
 function eventClass(summary) {
+    var classes = "";
+
     if (isGoldEvent(summary)) {
-        return "gold";
+        classes += (classes) ? " ": "";
+        classes += "gold";
     }
     if (isMushroomEvent(summary)) {
-        return "mushrooms";
+        classes += (classes) ? " ": "";
+        classes += "mushrooms";
     }
     if (isHourglassEvent(summary)) {
-        return "hourglasses";
+        classes += (classes) ? " ": "";
+        classes += "hourglasses";
     }
     if (isToiletEvent(summary)) {
-        return "aura";
+        classes += (classes) ? " ": "";
+        classes += "aura";
     }
     if (isFruitsEvent(summary)) {
-        return "animals";
+        classes += (classes) ? " ": "";
+        classes += "animals";
     }
+
     if (isEpicThirstEvent(summary)) {
-        return "epic-thirst";
+        classes += (classes) ? " ": "";
+        classes += "epic-thirst";
     }
-    if (isEpicLuckEvent(summary)) {
-        return "epic-luck";
+    else if (isEpicLuckEvent(summary)) {
+        classes += (classes) ? " ": "";
+        classes += "epic-luck";
     }
-    if (isEpicShopEvent(summary)) {
-        return "epic-shops";
+    else if (isEpicShopEvent(summary)) {
+        classes += (classes) ? " ": "";
+        classes += "epic-shops";
     }
+
     if (isAnyEpicEvent(summary)) {
-        return "epic";
+        classes += (classes) ? " ": "";
+        classes += "epic";
     }
+
     if (isBlacksmithEvent(summary)) {
-        return "blacksmith";
+        classes += (classes) ? " ": "";
+        classes += "blacksmith";
     }
     if (isSoulsEvent(summary)) {
-        return "souls";
+        classes += (classes) ? " ": "";
+        classes += "souls";
     }
     if (isFortressEvent(summary)) {
-        return "fortress";
+        classes += (classes) ? " ": "";
+        classes += "fortress";
     }
     if (isXPEvent(summary)) {
-        return "xp";
+        classes += (classes) ? " ": "";
+        classes += "xp";
     }
-    return "";
+
+    if (!classes) {
+        classes = "other";
+    }
+
+    if (isSpeculated(summary)) {
+        classes += (classes) ? " ": "";
+        classes += "speculated";
+    }
+    return classes;
 }
 
 function mainEventBgColor(summary) {
