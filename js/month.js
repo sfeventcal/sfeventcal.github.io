@@ -8,7 +8,7 @@ function applyFilter(el) {
       continue;
     }
     var filter = $(".st-panel-contents ." + cls);
-    if (!filter) {
+    if (filter.length == 0) {
       continue;
     }
     if (filter.prop("checked")) {
