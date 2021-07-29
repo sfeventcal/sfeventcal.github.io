@@ -49,15 +49,11 @@ function createCalendar(options, data) {
                 });
         },
         customDataSourceRenderer: function (elt, currentDate, events) {
+            if (!events.length)
+                return;
+            var mainEvent = events.sort((a, b) => eventOrder(a.name) - eventOrder(b.name))[0];
             var parent = elt.parentElement;
-            events.forEach(ev => {
-                if (ev.background) {
-                    parent.style.backgroundColor = ev.background;
-                    if (ev.textColor) {
-                        parent.style.color = ev.textColor;
-                    }
-                }
-            });
+            parent.classList = parent.classList + " event " + eventClass(mainEvent.name);
             if (DateTime.fromJSDate(currentDate).hasSame(DateTime.local(), "day")) {
                 $(parent).addClass("today");
             }

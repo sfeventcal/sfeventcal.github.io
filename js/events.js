@@ -204,17 +204,18 @@ function mainEventBgColor(summary) {
     if (isMultiEvent(summary)) {
         return "#f57f17";
     }
+    if (isMushroomEvent(summary)) {
+        return "#d84315";
+    }
     if (isGoldEvent(summary)) {
         return "#F9A825";
     }
-    if (isMushroomEvent(summary)) {
-        return "#d84315";
+    if (isXPEvent(summary)) {
+        return "#0D47A1";
     }
     if (isAnyEpicEvent(summary)) {
         return "#6A1B9A";
     }
-    if (isXPEvent(summary)) {
-        return "#0D47A1";
     if (isBlackFridayEvent(summary)) {
         return "#000";
     }
@@ -239,10 +240,10 @@ function eventOrder(summary) {
     if (isMultiEvent(summary)) {
         return 0;
     }
-    if (isGoldEvent(summary) || isXPEvent(summary)) {
+    if (isMushroomEvent(summary)) {
         return 1;
     }
-    if (isMushroomEvent(summary)) {
+    if (isGoldEvent(summary) || isXPEvent(summary)) {
         return 2;
     }
     if (isEpicShopEvent(summary)) {
@@ -263,10 +264,10 @@ function eventOrder(summary) {
     if (isSoulsEvent(summary)) {
         return 8;
     }
-    if (isHourglassEvent(summary)) {
+    if (isFruitsEvent(summary)) {
         return 9;
     }
-    if (isFruitsEvent(summary)) {
+    if (isHourglassEvent(summary)) {
         return 10;
     }
     return 100;
