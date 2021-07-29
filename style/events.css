@@ -141,7 +141,7 @@ div.event span {
     margin-left: 16px;
 }
 
-div.event.other span {
+.weekly-summary div.event.other span {
     margin-left: 0;
 }
 
