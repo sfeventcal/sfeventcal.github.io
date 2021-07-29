@@ -102,6 +102,14 @@ function isFortressEvent(summary) {
     return false;
 }
 
+function isBlackFridayEvent(summary) {
+    lowerText = summary.toLowerCase();
+    if (lowerText.includes("black") && lowerText.includes("friday")) {
+        return true;
+    }
+    return false;
+}
+
 function isMultiEvent(summary) {
     lowerText = summary.toLowerCase();
     if (isGoldEvent(summary) && isXPEvent(summary) && isMushroomEvent(summary)) {
@@ -176,6 +184,10 @@ function eventClass(summary) {
         classes += (classes) ? " ": "";
         classes += "xp";
     }
+    if (isBlackFridayEvent(summary)) {
+        classes += (classes) ? " ": "";
+        classes += "black-friday";
+    }
 
     if (!classes) {
         classes = "other";
@@ -203,6 +215,8 @@ function mainEventBgColor(summary) {
     }
     if (isXPEvent(summary)) {
         return "#0D47A1";
+    if (isBlackFridayEvent(summary)) {
+        return "#000";
     }
 
     // If not a secondary event, then it is some kind of special event
