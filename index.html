@@ -66,11 +66,14 @@
 		table-layout: auto;
 	}
 	.calendar table td, .calendar table th {
-		width: 30px;
-		min-width: 30px;
-		max-width: 30px;
-		height: 30px;
+		width: 24px;
+		min-width: 24px;
+		max-width: 24px;
+		height: 24px;
 		word-wrap: break-word;
+	}
+	.calendar table.month td.day .day-content {
+		padding: 1px;
 	}
 	.calendar table td.weekly-summary, .calendar table th.weekly-summary {
 		width: auto;
@@ -80,6 +83,15 @@
 	}
 	.calendar .months-container .month-container {
 		margin-bottom: 30px;
+	}
+	@media screen and (max-width: 600px) {
+		.weekly-summary :not(div.event.other) {
+			width: 24px;
+			line-height: 18px;
+			padding: 2px;
+			background-position: center center;
+			text-indent: -20000px;
+		}
 	}
 	</style>
 </head>

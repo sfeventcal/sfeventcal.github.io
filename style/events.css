@@ -1,209 +1,3 @@
-.gold .fc-list-event-title a
-{
-    color: #F9A825;
-}
-.gold.fc-h-event,
-.gold .fc-list-event-dot
-{
-    border-color: #F9A825;
-    background-color: #F9A825;
-}
-.gold.fc-h-event,
-.fc .fc-list-table .gold td.fc-list-event-graphic {
-    background-image: url("../images/events/gold-14.png");
-}
-
-.mushrooms .fc-list-event-title a
-{
-    color: #75230a;
-}
-.mushrooms.fc-h-event,
-.mushrooms .fc-list-event-dot
-{
-    border-color: #75230a;
-    background-color: #75230a;
-}
-.mushrooms.fc-h-event,
-.fc .fc-list-table .mushrooms td.fc-list-event-graphic {
-    background-image: url("../images/events/mushrooms-14.png");
-}
-
-.hourglasses .fc-list-event-title a
-{
-    color: #8D6E63;
-}
-.hourglasses.fc-h-event,
-.hourglasses .fc-list-event-dot
-{
-    border-color: #8D6E63;
-    background-color: #8D6E63;
-}
-.hourglasses.fc-h-event,
-.fc .fc-list-table .hourglasses td.fc-list-event-graphic {
-    background-image: url("../images/events/hourglasses-14.png");    
-}
-
-.aura .fc-list-event-title a
-{
-    color: #558B2F;
-}
-.aura.fc-h-event,
-.aura .fc-list-event-dot
-{
-    border-color: #558B2F;
-    background-color: #558B2F;
-}
-.aura.fc-h-event,
-.fc .fc-list-table .aura td.fc-list-event-graphic {
-    background-image: url("../images/events/aura-14.png");    
-}
-
-.animals .fc-list-event-title a
-{
-    color: #795548;
-}
-.animals.fc-h-event,
-.animals .fc-list-event-dot
-{
-    border-color: #795548;
-    background-color: #795548;
-}
-.animals.fc-h-event,
-.fc .fc-list-table .animals td.fc-list-event-graphic {
-    background-image: url("../images/events/fruits-14.png");    
-}
-
-.epic-thirst .fc-list-event-title a
-{
-    color: #8E24AA;
-}
-.epic-thirst.fc-h-event,
-.epic-thirst .fc-list-event-dot
-{
-    border-color: #8E24AA;
-    background-color: #8E24AA;
-}
-.epic-thirst.fc-h-event,
-.fc .fc-list-table .epic-thirst td.fc-list-event-graphic {
-    background-image: url("../images/events/epic-thirst-14.png");    
-}
-
-.epic-luck .fc-list-event-title a
-{
-    color: #8E24AA;
-}
-.epic-luck.fc-h-event,
-.epic-luck .fc-list-event-dot
-{
-    border-color: #8E24AA;
-    background-color: #8E24AA;
-}
-.epic-luck.fc-h-event,
-.fc .fc-list-table .epic-luck td.fc-list-event-graphic {
-    background-image: url("../images/events/epic-luck-14.png");    
-}
-
-.epic-shops .fc-list-event-title a
-{
-    color: #6A1B9A;
-}
-.epic-shops.fc-h-event,
-.epic-shops .fc-list-event-dot
-{
-    border-color: #6A1B9A;
-    background-color: #6A1B9A;
-}
-.epic-shops.fc-h-event,
-.fc .fc-list-table .epic-shops td.fc-list-event-graphic {
-    background-image: url("../images/events/epic-shops-14.png");    
-}
-
-.blacksmith .fc-list-event-title a
-{
-    color: #757575;
-}
-.blacksmith.fc-h-event,
-.blacksmith .fc-list-event-dot
-{
-    border-color: #757575;
-    background-color: #757575;
-}
-.blacksmith.fc-h-event,
-.fc .fc-list-table .blacksmith td.fc-list-event-graphic {
-    background-image: url("../images/events/blacksmith-14.png");    
-}
-
-.souls .fc-list-event-title a
-{
-    color: #00796B;
-}
-.souls.fc-h-event,
-.souls .fc-list-event-dot
-{
-    border-color: #00796B;
-    background-color: #00796B;
-}
-.souls.fc-h-event,
-.fc .fc-list-table .souls td.fc-list-event-graphic {
-    background-image: url("../images/events/souls-14.png");
-}
-
-.fortress .fc-list-event-title a
-{
-    color: #795548;
-}
-.fortress.fc-h-event,
-.fortress .fc-list-event-dot
-{
-    border-color: #795548;
-    background-color: #795548;
-}
-.fortress.fc-h-event,
-.fc .fc-list-table .fortress td.fc-list-event-graphic {
-    background-image: url("../images/events/gem-14.png");
-}
-
-.xp .fc-list-event-title a
-{
-    color: #0D47A1;
-}
-.xp.fc-h-event,
-.xp .fc-list-event-dot
-{
-    border-color: #0D47A1;
-    background-color: #0D47A1;
-}
-.xp.fc-h-event,
-.fc .fc-list-table .xp td.fc-list-event-graphic {
-    background-image: url("../images/events/xp-14.png");    
-}
-
-.fc-h-event
-{
-    padding-left: 16px;
-    background-position: 2px center;
-    background-repeat: no-repeat;
-}
-
-.fc .fc-list-table td.fc-list-event-title {
-    padding-left: 0;
-}
-
-.fc .fc-list-table td.fc-list-event-graphic {
-    padding: 0;
-    width: 24px;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.fc .fc-list-table td.fc-list-event-graphic .fc-list-event-dot {
-    display: none;
-}
-
-.fc-day-fri, .fc-day-sat, .fc-day-sun {
-    background-color: #f9f9f9;
-}
-
 td.day.today {
     border: 1px dotted;
     border-radius: 0;
@@ -310,19 +104,30 @@ div.event.xp,
 
 td.day.black-friday,
 div.event.black-friday,
-black-friday .event-name
+.black-friday .event-name
 {
     background-color: #000;
+}
+
+td.day.legendary-dungeon,
+div.event.legendary-dungeon,
+.legendary-dungeon .event-name
+{
+    background-color: #e26200;
 }
 
 div.event {
     display: inline-block;
     padding: 4px;
     border-radius: 4px;
-    margin: 2px;
+    margin: 1px;
     background-position: 3px center;
     background-repeat: no-repeat;
     cursor: pointer;
+}
+
+.weekly-summary div.event {
+    padding: 2px;
 }
 
 div.event-tooltip.event {
@@ -333,12 +138,16 @@ div.event-tooltip.event {
 }
 
 div.event span {
-    margin-left: 15px;
+    margin-left: 16px;
+}
+
+div.event.other span {
+    margin-left: 0;
 }
 
 div.event.gold
 {
-    background-image: url("../images/events/gold-14.png");
+    background-image: url("../images/events/gold5-14.png");
 }
 
 div.event.mushrooms
@@ -348,7 +157,7 @@ div.event.mushrooms
 
 div.event.hourglasses
 {
-    background-image: url("../images/events/hourglasses-14.png");
+    background-image: url("../images/events/hourglasses2-14.png");
 }
 
 div.event.aura
@@ -358,7 +167,7 @@ div.event.aura
 
 div.event.animals
 {
-    background-image: url("../images/events/animals-14.png");
+    background-image: url("../images/events/fruits-14.png");
 }
 
 div.event.epic-thirst
@@ -368,17 +177,17 @@ div.event.epic-thirst
 
 div.event.epic-luck
 {
-    background-image: url("../images/events/epic-luck-14.png");
+    background-image: url("../images/events/epic-luck2-14.png");
 }
 
 div.event.epic-shops
 {
-    background-image: url("../images/events/epic-shops-14.png");
+    background-image: url("../images/events/epic-shops2-14.png");
 }
 
 div.event.blacksmith
 {
-    background-image: url("../images/events/blacksmith-14.png");
+    background-image: url("../images/events/blacksmith2-14.png");
 }
 
 div.event.souls
@@ -388,10 +197,20 @@ div.event.souls
 
 div.event.fortress
 {
-    background-image: url("../images/events/icon-wood.png");
+    background-image: url("../images/events/fortress-14.png");
 }
 
 div.event.xp
 {
-    background-image: url("../images/events/xp-14.png");
+    background-image: url("../images/events/xp2-14.png");
+}
+
+div.event.black-friday
+{
+    background-image: url("../images/events/black-gem-14.png");
+}
+
+div.event.legendary-dungeon
+{
+    background-image: url("../images/events/leg-gem-14.png");
 }

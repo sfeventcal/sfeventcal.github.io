@@ -110,6 +110,14 @@ function isBlackFridayEvent(summary) {
     return false;
 }
 
+function isLDEvent(summary) {
+    lowerText = summary.toLowerCase();
+    if (lowerText.includes("leg") && lowerText.includes("dung")) {
+        return true;
+    }
+    return false;
+}
+
 function isMultiEvent(summary) {
     lowerText = summary.toLowerCase();
     if (isGoldEvent(summary) && isXPEvent(summary) && isMushroomEvent(summary)) {
@@ -187,6 +195,10 @@ function eventClass(summary) {
     if (isBlackFridayEvent(summary)) {
         classes += (classes) ? " ": "";
         classes += "black-friday";
+    }
+    if (isLDEvent(summary)) {
+        classes += (classes) ? " ": "";
+        classes += "legendary-dungeon";
     }
 
     if (!classes) {
@@ -314,6 +326,15 @@ function eventShortName(title) {
     }
     else if (isHourglassEvent(title)) {
         shortName = "Hourglasses";
+    }
+    else if (isBlackFridayEvent(title)) {
+        shortName = "Black Friday";
+    }
+    else if (isLDEvent(title)) {
+        shortName = "Leg. Dungeon";
+    }
+    else {
+        shortName = title.replace(/[ ]?speculated[ ]?/ig, '');
     }
 
     return shortName;
