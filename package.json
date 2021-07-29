@@ -1,6 +1,6 @@
 {
   "name": "sfeventcal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Event Calendar for Shakes and Fidget",
   "main": "index.html",
   "scripts": {

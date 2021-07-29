@@ -11,26 +11,76 @@
 	<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css" />
 	<link rel="stylesheet" href="style/events.css" />
 	<style>
+	html, body {
+		background-color: #1E1E1E;
+		color: #C4C4C4;
+	}
 	body {
 	    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	}
-	.calendar .months-container .month-container {
-		height: 240px;
+	.calendar .calendar-header {
+		border: none;
+	}
+	.calendar .calendar-header table th.disabled, .calendar .calendar-header table th.disabled:hover {
+		background: #1E1E1E;
+		cursor: default;
+		color: #3E3E3E;
+	}
+	.calendar .calendar-header table th:hover {
+		background: #eee;
+		color: #1E1E1E;
 	}
 	.calendar table.month .month-title {
-		background-color: #2C3E50;
+		background: #3C3C3C;
+		color: #E7E7E7;
+	}
+	.calendar table.month .month-title,
+	.calendar table.month .month-title a {
+		color: #E7E7E7;
+	}
+	.calendar table.month th.day-header, .calendar table.month th.weekly-summary {
+		border-bottom: 2px solid #E7E7E7;
+	}
+	.calendar table td {
+		border-bottom: 1px solid #404040;
+	}
+	.calendar table.month td.day .day-content {
+		border-radius: 0;
+	}
+
+
+	.calendar .month-container {
+		width: 100%;
+	}
+	.calendar table.month .month-title {
 		padding: 5px;
 		border: 1px solid transparent;
 		border-radius: 0;
 	}
-	.calendar table.month .month-title,
-	.calendar table.month .month-title a {
-		color: #ffffff;
-	}
-	.calendar table.month .day-header {
+	.calendar table.month th.day-header, .calendar table.month th.weekly-summary {
 		padding-top: 8px;
-		border-bottom: 2px solid #2C3E50;
-	}	
+	}
+	.calendar table {
+		width: 100%;
+		max-width: 800px;
+		table-layout: auto;
+	}
+	.calendar table td, .calendar table th {
+		width: 30px;
+		min-width: 30px;
+		max-width: 30px;
+		height: 30px;
+		word-wrap: break-word;
+	}
+	.calendar table td.weekly-summary, .calendar table th.weekly-summary {
+		width: auto;
+	}
+	.calendar table tr:last-child td {
+		border-bottom: none;
+	}
+	.calendar .months-container .month-container {
+		margin-bottom: 30px;
+	}
 	</style>
 </head>
 <body>

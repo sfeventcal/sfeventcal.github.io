@@ -1,4 +1,3 @@
-.gold .event-name,
 .gold .fc-list-event-title a
 {
     color: #F9A825;
@@ -14,7 +13,6 @@
     background-image: url("../images/events/gold-14.png");
 }
 
-.mushrooms .event-name,
 .mushrooms .fc-list-event-title a
 {
     color: #75230a;
@@ -30,7 +28,6 @@
     background-image: url("../images/events/mushrooms-14.png");
 }
 
-.hourglasses .event-name,
 .hourglasses .fc-list-event-title a
 {
     color: #8D6E63;
@@ -46,7 +43,6 @@
     background-image: url("../images/events/hourglasses-14.png");    
 }
 
-.aura .event-name,
 .aura .fc-list-event-title a
 {
     color: #558B2F;
@@ -62,7 +58,6 @@
     background-image: url("../images/events/aura-14.png");    
 }
 
-.animals .event-name,
 .animals .fc-list-event-title a
 {
     color: #795548;
@@ -78,7 +73,6 @@
     background-image: url("../images/events/fruits-14.png");    
 }
 
-.epic-thirst .event-name,
 .epic-thirst .fc-list-event-title a
 {
     color: #8E24AA;
@@ -94,7 +88,6 @@
     background-image: url("../images/events/epic-thirst-14.png");    
 }
 
-.epic-luck .event-name,
 .epic-luck .fc-list-event-title a
 {
     color: #8E24AA;
@@ -110,7 +103,6 @@
     background-image: url("../images/events/epic-luck-14.png");    
 }
 
-.epic-shops .event-name,
 .epic-shops .fc-list-event-title a
 {
     color: #6A1B9A;
@@ -126,7 +118,6 @@
     background-image: url("../images/events/epic-shops-14.png");    
 }
 
-.blacksmith .event-name,
 .blacksmith .fc-list-event-title a
 {
     color: #757575;
@@ -142,7 +133,6 @@
     background-image: url("../images/events/blacksmith-14.png");    
 }
 
-.souls .event-name,
 .souls .fc-list-event-title a
 {
     color: #00796B;
@@ -158,7 +148,6 @@
     background-image: url("../images/events/souls-14.png");
 }
 
-.fortress .event-name,
 .fortress .fc-list-event-title a
 {
     color: #795548;
@@ -174,7 +163,6 @@
     background-image: url("../images/events/gem-14.png");
 }
 
-.xp .event-name,
 .xp .fc-list-event-title a
 {
     color: #0D47A1;
@@ -219,4 +207,191 @@
 td.day.today {
     border: 1px dotted;
     border-radius: 0;
+}
+
+td.day.event, div.event {
+    background-color: rgb(55, 136, 216);
+    color: #fff;
+}
+
+div.event.highlight {
+    box-shadow: red 0px 0px 0px 3px;
+}
+
+.event-name {
+    padding: 4px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+td.day.gold,
+div.event.gold,
+.gold .event-name
+{
+    background-color: #F9A825;
+}
+
+td.day.mushrooms,
+div.event.mushrooms,
+.mushrooms .event-name
+{
+    background-color: #75230a;
+}
+
+td.day.hourglasses,
+div.event.hourglasses,
+.hourglasses .event-name
+{
+    background-color: #8D6E63;
+}
+
+td.day.aura,
+div.event.aura,
+.aura .event-name
+{
+    background-color: #558B2F;
+}
+
+td.day.animals,
+div.event.animals,
+.animals .event-name
+{
+    background-color: #795548;
+}
+
+td.day.epic-thirst,
+div.event.epic-thirst,
+.epic-thirst .event-name
+{
+    background-color: #8E24AA;
+}
+
+td.day.epic-luck,
+div.event.epic-luck,
+.epic-luck .event-name
+{
+    background-color: #8E24AA;
+}
+
+td.day.epic-shops,
+div.event.epic-shops,
+.epic-shops .event-name
+{
+    background-color: #6A1B9A;
+}
+
+td.day.blacksmith,
+div.event.blacksmith,
+.blacksmith .event-name
+{
+    background-color: #757575;
+}
+
+td.day.souls,
+div.event.souls,
+.souls .event-name
+{
+    background-color: #00796B;
+}
+
+td.day.fortress,
+div.event.fortress,
+.fortress .event-name
+{
+    background-color: #795548;
+}
+
+td.day.xp,
+div.event.xp,
+.xp .event-name
+{
+    background-color: #0D47A1;
+}
+
+td.day.black-friday,
+div.event.black-friday,
+black-friday .event-name
+{
+    background-color: #000;
+}
+
+div.event {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 2px;
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+div.event-tooltip.event {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.event span {
+    margin-left: 15px;
+}
+
+div.event.gold
+{
+    background-image: url("../images/events/gold-14.png");
+}
+
+div.event.mushrooms
+{
+    background-image: url("../images/events/mushrooms-14.png");
+}
+
+div.event.hourglasses
+{
+    background-image: url("../images/events/hourglasses-14.png");
+}
+
+div.event.aura
+{
+    background-image: url("../images/events/aura-14.png");
+}
+
+div.event.animals
+{
+    background-image: url("../images/events/animals-14.png");
+}
+
+div.event.epic-thirst
+{
+    background-image: url("../images/events/epic-thirst-14.png");
+}
+
+div.event.epic-luck
+{
+    background-image: url("../images/events/epic-luck-14.png");
+}
+
+div.event.epic-shops
+{
+    background-image: url("../images/events/epic-shops-14.png");
+}
+
+div.event.blacksmith
+{
+    background-image: url("../images/events/blacksmith-14.png");
+}
+
+div.event.souls
+{
+    background-image: url("../images/events/souls-14.png");
+}
+
+div.event.fortress
+{
+    background-image: url("../images/events/icon-wood.png");
+}
+
+div.event.xp
+{
+    background-image: url("../images/events/xp-14.png");
 }

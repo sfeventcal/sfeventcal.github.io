@@ -34,7 +34,7 @@ function createCalendar(options, data) {
         enableRangeSelection: false,
         minDate: minDate,
         hideOtherMonths: true,
-        //style: 'background',
+        displayWeeklySummary: true,
         style: 'custom',
         dataSource: function (year) {
             var calendarURL = `https://www.googleapis.com/calendar/v3/calendars/${options.calendarID}/events?key=${options.apiKey}&singleEvents=true&orderBy=starttime&timeZone=Europe%2FBerlin`;
@@ -58,30 +58,74 @@ function createCalendar(options, data) {
                 $(parent).addClass("today");
             }
         },
-        clickDay: function(e) {
-            if (e.events.length > 0) {
-                window.location = `month.html?m=${e.date.getMonth()}&y=${e.date.getFullYear()}`;
-            }
+        customDataSourceWeeklySummaryRenderer: function (elt, weekStart, weekEnd, events) {
+            let orderedEvents = events.sort((a, b) => eventOrder(a.name) - eventOrder(b.name));
+            let uniqueEvents = orderedEvents.filter((v,i,a)=>a.findIndex(t=>(eventShortName(t.name) === eventShortName(v.name)))===i);
+            uniqueEvents.forEach((e) => {
+                let eventEl = document.createElement("div");
+                eventEl.className = "event " + eventClass(e.name);
+                let textEl = document.createElement("span");
+                textEl.textContent = eventShortName(e.name);
+                eventEl.appendChild(textEl);
+                elt.appendChild(eventEl);
+                $(eventEl).data("event", e);
+            });
         },
         mouseOnDay: function(e) {
-            if (e.element._tippy != null) { 
+            if ((e.element._tippy != null) || (!e.events.length))
                 return;
+            var content = '';
+            for(var i in e.events) {
+                content +=
+                    `<div class="event-tooltip event ${eventClass(e.events[i].name)}">` +
+                        `<span>${e.events[i].name}</span>` +
+                    `</div>`;
             }
-            if(e.events.length > 0) {
-                var content = '';    
-                for(var i in e.events) {
-                    content += `<div class="event-tooltip ${eventClass(e.events[i].name)}">` +
-                                    `<div class="event-name">${e.events[i].name}</div>` +
-                                    `<div class="event-description">${e.events[i].description || ""}</div>` +
-                                `</div>`;
+            var tip = tippy(e.element, {
+                content: content,
+                allowHTML: true,
+                theme: 'dark'
+            });
+            tip.show();
+        },
+        renderEnd: function(currentYear) {
+            $("div.event").mouseenter(function(e) {
+                if (this._mouseDown)
+                {
+                    return;
                 }
-                var tip = tippy(e.element, {
+                let element = e.currentTarget;
+                if (element._tippy != null) {
+                    return;
+                }
+                let event = $(element).data("event");
+                if(!event) {
+                    return;
+                }
+                let content =
+                    `<div class="event-tooltip event ${eventClass(event.name)}">` +
+                        `<span>${event.name}</span>` +
+                    `</div>
+                    <div>
+                        <div class="event-description">${event.description || ""}</div>
+                    </div>
+                    `;
+                var tip = tippy(element, {
                     content: content,
                     allowHTML: true,
-                    theme: 'light'
+                    theme: eventClass(event.name) || "dark"
                 });
                 tip.show();
-            }
+            });
+            $("div.event").click(function(e) {
+                let element = e.currentTarget;
+                let event = $(element).data("event");
+                if (!(event?.link)) {
+                    return;
+                }
+                window.open(event.link, 'google-calendar-event', 'width=700,height=600');
+                e.preventDefault();
+            });
         }
     });
 }
