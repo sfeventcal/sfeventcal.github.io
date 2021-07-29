@@ -271,3 +271,49 @@ function eventOrder(summary) {
     }
     return 100;
 }
+
+function eventShortName(title) {
+    var shortName = title;
+
+    if (isMushroomEvent(title)) {
+        shortName = "Mushrooms";
+    }
+    else if (isGoldEvent(title)) {
+        shortName = "Gold";
+    }
+    else if (isXPEvent(title)) {
+        shortName = "XP";
+    }
+    else if (isEpicThirstEvent(title)) {
+        shortName = "Epic Thirst";
+    }
+    else if (isEpicLuckEvent(title)) {
+        shortName = "Epic Luck";
+    }
+    else if (isEpicShopEvent(title)) {
+        shortName = "Epic Shops";
+    }
+    else if (isAnyEpicEvent(title)) {
+        shortName = "Epic";
+    }
+    else if (isFortressEvent(title)) {
+        shortName = "Fortress";
+    }
+    else if (isSoulsEvent(title)) {
+        shortName = "Souls";
+    }
+    else if (isToiletEvent(title)) {
+        shortName = "Toilet";
+    }
+    else if (isBlacksmithEvent(title)) {
+        shortName = "Blacksmith";
+    }
+    else if (isFruitsEvent(title)) {
+        shortName = "Animals";
+    }
+    else if (isHourglassEvent(title)) {
+        shortName = "Hourglasses";
+    }
+
+    return shortName;
+}
