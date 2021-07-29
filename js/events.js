@@ -282,6 +282,12 @@ function eventOrder(summary) {
     if (isHourglassEvent(summary)) {
         return 10;
     }
+    if (isBlackFridayEvent(summary)) {
+        return 11;
+    }
+    if (isLDEvent(summary)) {
+        return 12;
+    }
     return 100;
 }
 
