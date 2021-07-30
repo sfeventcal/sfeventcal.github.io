@@ -74,14 +74,15 @@ function createCalendar(options, data) {
         mouseOnDay: function(e) {
             if ((e.element._tippy != null) || (!e.events.length))
                 return;
-            var content = '';
-            for(var i in e.events) {
+            let content = '';
+            let orderedEvents = e.events.sort((a, b) => eventOrder(a.name) - eventOrder(b.name));
+            for(let event of orderedEvents) {
                 content +=
-                    `<div class="event-tooltip event ${eventClass(e.events[i].name)}">` +
-                        `<span>${e.events[i].name}</span>` +
+                    `<div class="event-tooltip event ${eventClass(event.name)}">` +
+                        `<span>${event.name}</span>` +
                     `</div>`;
             }
-            var tip = tippy(e.element, {
+            let tip = tippy(e.element, {
                 content: content,
                 allowHTML: true,
                 theme: 'dark'
