@@ -127,6 +127,7 @@ function createCalendar(options, data) {
                 window.open(event.link, 'google-calendar-event', 'width=700,height=600');
                 e.preventDefault();
             });
+            $(".footer").show();
         }
     });
 }
