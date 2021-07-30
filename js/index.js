@@ -48,15 +48,18 @@ function createCalendar(options, data) {
                     return [];
                 });
         },
+        customDayRenderer: function (elt, currentDate) {
+            var parent = elt.parentElement;
+            if (DateTime.fromJSDate(currentDate).hasSame(DateTime.local(), "day")) {
+                $(parent).addClass("today");
+            }
+        },
         customDataSourceRenderer: function (elt, currentDate, events) {
             if (!events.length)
                 return;
             var mainEvent = events.sort((a, b) => eventOrder(a.name) - eventOrder(b.name))[0];
             var parent = elt.parentElement;
             parent.classList = parent.classList + " event " + eventClass(mainEvent.name);
-            if (DateTime.fromJSDate(currentDate).hasSame(DateTime.local(), "day")) {
-                $(parent).addClass("today");
-            }
         },
         customDataSourceWeeklySummaryRenderer: function (elt, weekStart, weekEnd, events) {
             let orderedEvents = events.sort((a, b) => eventOrder(a.name) - eventOrder(b.name));

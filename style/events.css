@@ -1,6 +1,5 @@
 td.day.today {
-    border: 1px dotted;
-    border-radius: 0;
+    border-bottom: 1px solid #fff !important;
 }
 
 td.day.event, div.event {
